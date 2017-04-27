@@ -26,7 +26,11 @@ class Main extends CI_Controller
         else
             $this->load->view('templates/header');
 
-        $this->load->view($viewname, $data);
+
+        //$fullname=base_url()."application/views/".$viewname.".php";
+        //if (file_exists($fullname))
+            $this->load->view($viewname, $data);
+        //else echo ("Nema datoteke ".$fullname);
 
         if (isset($footer))
             $this->load->view($footer);
@@ -36,7 +40,19 @@ class Main extends CI_Controller
 
     public function index()
     {
-        $this->openview('_test');
+        $this->openview('login');
         // $this->load->view('welcome_message');
+    }
+    public function broj_osiguranja()
+    {
+        $this->openview('broj-osiguranja');
+    }
+    public function opis()
+    {
+        $this->openview('opis');
+    }
+    public function upload()
+    {
+        $this->openview('upload');
     }
 }
